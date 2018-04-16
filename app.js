@@ -10,9 +10,18 @@ const argv = yargs.argv;
 var command = argv._[0];
 
 if (command === 'add') {
-    
-    notes.addNote(argv.title, argv.body);
+    var note = notes.addNote(argv.title, argv.body);
 
+    console.log(note);
+
+    if (note) {
+        console.log('Note created.');
+        console.log('--');
+        console.log(`Title: ${note.title}`);
+        console.log(`Body: ${note.body}`);
+    } else {
+        console.log('Note title taken.');
+    }
 } else if (command === 'list') {
 
     notes.getAll();
