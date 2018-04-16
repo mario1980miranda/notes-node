@@ -3,16 +3,24 @@ console.log('Starting App');
 const fs = require('fs');
 const os = require('os');
 const notes = require('./notes.js');
+const _ = require('lodash');
 
-var user = os.userInfo();
+// console.log(_.isString(true));
+// console.log(_.isString('Mario'));
 
-var res = notes.addNote();
+var filteredArray = _.uniq(['Mario', 1, 'Mario', 2, 3, 4]);
 
-console.log(res);
+console.log(filteredArray);
 
-var sum = notes.add(5,2);
+//var user = os.userInfo();
 
-console.log(sum);
+//var res = notes.addNote();
+
+//console.log(res);
+
+//var sum = notes.add(5,2);
+
+//console.log(sum);
 
 //console.log(user);
 
