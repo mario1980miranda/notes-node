@@ -1,37 +1,24 @@
 console.log('Starting App');
 
 const fs = require('fs');
-const os = require('os');
-const notes = require('./notes.js');
 const _ = require('lodash');
 
-// console.log(_.isString(true));
-// console.log(_.isString('Mario'));
+const notes = require('./notes.js');
 
-var filteredArray = _.uniq(['Mario', 1, 'Mario', 2, 3, 4]);
+var command = process.argv[2];
 
-console.log(filteredArray);
+console.log(process.argv);
 
-//var user = os.userInfo();
+console.log('Command: ', command);
 
-//var res = notes.addNote();
-
-//console.log(res);
-
-//var sum = notes.add(5,2);
-
-//console.log(sum);
-
-//console.log(user);
-
-//fs.appendFile('Grettings.txt', 'Hello ' + user.username + '!', function(err) {
-//    if (err) {
-//        console.log('Unable to write to file');
-//    }
-//});
-
-// fs.appendFile('Grettings.txt', `Hello ${user.username}! You are ${notes.age}`, function(err) {
-//     if (err) {
-//         console.log('Unable to write to file');
-//     }
-// });
+if (command === 'add') {
+    console.log('Adding new note');
+} else if (command === 'list') {
+    console.log('Listing all notes');
+} else if (command === 'read') {
+    console.log('Reading note');
+} else if (command == 'remove') {
+    console.log('Removing note');
+} else {
+    console.log('Command not recognised');
+}
