@@ -16,7 +16,7 @@ var saveNotes = (notes) => {
 };
 
 var getAll = () => {
-    console.log('Getting all notes');
+    return fetchNotes();
 };
 
 var addNote = (title, body) => {
