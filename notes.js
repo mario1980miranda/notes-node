@@ -1,5 +1,3 @@
-console.log('Starting note.js');
-
 const fs = require('fs');
 
 var fetchNotes = () => {
